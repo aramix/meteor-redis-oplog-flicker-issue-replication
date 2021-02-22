@@ -10,14 +10,12 @@ Template.hello.onRendered(function helloOnCreated() {
 
 Template.hello.helpers({
 	counter() {
-		const c = Counters.findOne();
-		return c && c.value;
+		return Counters.find();
 	},
 });
 
 Template.hello.events({
 	'click button'(event, instance) {
-		const c = Counters.findOne();
-		c && Counters.update(c._id, { $inc: { value: 1 } });
+		Counters.update(Counters.findOne()._id, { $inc: { value: 1 } });
 	},
 });
