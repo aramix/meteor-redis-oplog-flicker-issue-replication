@@ -1,0 +1,13 @@
+{
+  "public": {
+    "RELEASENO": "dev"
+  },
+  "redisOplog": {
+    "retryIntervalMs": 10000,
+    "mutationDefaults": {
+      "optimistic": true,
+      "pushToRedis": false
+    },
+    "debug": true
+  }
+}
